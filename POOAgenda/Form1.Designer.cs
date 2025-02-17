@@ -28,32 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            TxtNombre = new TextBox();
+            TxtTelefono = new TextBox();
+            Agregar = new Button();
+            DgvContactos = new DataGridView();
+            Nombre = new DataGridViewTextBoxColumn();
+            Teléfono = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)DgvContactos).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // label1
             // 
-            button1.Location = new Point(440, 92);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(0, 192, 192);
+            label1.ForeColor = Color.MidnightBlue;
+            label1.Location = new Point(95, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Nombre";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(0, 192, 192);
+            label2.ForeColor = Color.MidnightBlue;
+            label2.Location = new Point(95, 123);
+            label2.Name = "label2";
+            label2.Size = new Size(67, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Telefono";
+            label2.TextChanged += Telefono;
+            label2.Click += label2_Click;
+            // 
+            // TxtNombre
+            // 
+            TxtNombre.AccessibleRole = AccessibleRole.Client;
+            TxtNombre.BackColor = Color.HotPink;
+            TxtNombre.ForeColor = Color.Lime;
+            TxtNombre.Location = new Point(227, 34);
+            TxtNombre.Name = "TxtNombre";
+            TxtNombre.Size = new Size(408, 27);
+            TxtNombre.TabIndex = 2;
+            // 
+            // TxtTelefono
+            // 
+            TxtTelefono.BackColor = Color.HotPink;
+            TxtTelefono.ForeColor = Color.DarkBlue;
+            TxtTelefono.Location = new Point(227, 120);
+            TxtTelefono.Name = "TxtTelefono";
+            TxtTelefono.Size = new Size(408, 27);
+            TxtTelefono.TabIndex = 3;
+            // 
+            // Agregar
+            // 
+            Agregar.BackColor = Color.Gold;
+            Agregar.ForeColor = Color.DarkOrchid;
+            Agregar.Location = new Point(653, 123);
+            Agregar.Name = "Agregar";
+            Agregar.Size = new Size(94, 29);
+            Agregar.TabIndex = 4;
+            Agregar.Text = "Agregar";
+            Agregar.UseVisualStyleBackColor = false;
+            Agregar.Click += button1_Click_1;
+            // 
+            // DgvContactos
+            // 
+            DgvContactos.BackgroundColor = Color.SlateBlue;
+            DgvContactos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvContactos.Columns.AddRange(new DataGridViewColumn[] { Nombre, Teléfono });
+            DgvContactos.Location = new Point(259, 173);
+            DgvContactos.Name = "DgvContactos";
+            DgvContactos.RowHeadersWidth = 51;
+            DgvContactos.Size = new Size(306, 235);
+            DgvContactos.TabIndex = 5;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 6;
+            Nombre.Name = "Nombre";
+            Nombre.Width = 125;
+            // 
+            // Teléfono
+            // 
+            Teléfono.DataPropertyName = "Telefono";
+            Teléfono.HeaderText = "Teléfono";
+            Teléfono.MinimumWidth = 6;
+            Teléfono.Name = "Teléfono";
+            Teléfono.Width = 125;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            ClientSize = new Size(784, 450);
+            Controls.Add(DgvContactos);
+            Controls.Add(Agregar);
+            Controls.Add(TxtTelefono);
+            Controls.Add(TxtNombre);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
+            Click += label2_Click;
+            ((System.ComponentModel.ISupportInitialize)DgvContactos).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Label label1;
+        private TextBox TxtNombre;
+        private TextBox TxtTelefono;
+        private Button Agregar;
+        private Label label2;
+        private DataGridView DgvContactos;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Teléfono;
     }
 }
