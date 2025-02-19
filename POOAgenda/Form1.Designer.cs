@@ -35,7 +35,10 @@
             Agregar = new Button();
             DgvContactos = new DataGridView();
             Nombre = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
             Teléfono = new DataGridViewTextBoxColumn();
+            label3 = new Button();
+            TxtEmail = new TextBox();
             ((System.ComponentModel.ISupportInitialize)DgvContactos).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +59,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(0, 192, 192);
             label2.ForeColor = Color.MidnightBlue;
-            label2.Location = new Point(95, 123);
+            label2.Location = new Point(92, 107);
             label2.Name = "label2";
             label2.Size = new Size(67, 20);
             label2.TabIndex = 1;
@@ -78,7 +81,7 @@
             // 
             TxtTelefono.BackColor = Color.HotPink;
             TxtTelefono.ForeColor = Color.DarkBlue;
-            TxtTelefono.Location = new Point(227, 120);
+            TxtTelefono.Location = new Point(227, 107);
             TxtTelefono.Name = "TxtTelefono";
             TxtTelefono.Size = new Size(408, 27);
             TxtTelefono.TabIndex = 3;
@@ -87,7 +90,7 @@
             // 
             Agregar.BackColor = Color.Gold;
             Agregar.ForeColor = Color.DarkOrchid;
-            Agregar.Location = new Point(653, 123);
+            Agregar.Location = new Point(666, 175);
             Agregar.Name = "Agregar";
             Agregar.Size = new Size(94, 29);
             Agregar.TabIndex = 4;
@@ -99,12 +102,13 @@
             // 
             DgvContactos.BackgroundColor = Color.SlateBlue;
             DgvContactos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvContactos.Columns.AddRange(new DataGridViewColumn[] { Nombre, Teléfono });
-            DgvContactos.Location = new Point(259, 173);
+            DgvContactos.Columns.AddRange(new DataGridViewColumn[] { Nombre, Email, Teléfono });
+            DgvContactos.Location = new Point(210, 217);
             DgvContactos.Name = "DgvContactos";
             DgvContactos.RowHeadersWidth = 51;
-            DgvContactos.Size = new Size(306, 235);
+            DgvContactos.Size = new Size(425, 235);
             DgvContactos.TabIndex = 5;
+            DgvContactos.CellContentClick += DgvContactos_CellContentClick;
             // 
             // Nombre
             // 
@@ -114,6 +118,14 @@
             Nombre.Name = "Nombre";
             Nombre.Width = 125;
             // 
+            // Email
+            // 
+            Email.DataPropertyName = "Email";
+            Email.HeaderText = "Email";
+            Email.MinimumWidth = 6;
+            Email.Name = "Email";
+            Email.Width = 125;
+            // 
             // Teléfono
             // 
             Teléfono.DataPropertyName = "Telefono";
@@ -122,11 +134,32 @@
             Teléfono.Name = "Teléfono";
             Teléfono.Width = 125;
             // 
+            // label3
+            // 
+            label3.Location = new Point(83, 175);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 29);
+            label3.TabIndex = 6;
+            label3.Text = "Email";
+            label3.UseVisualStyleBackColor = true;
+            label3.Click += button1_Click;
+            // 
+            // TxtEmail
+            // 
+            TxtEmail.BackColor = Color.HotPink;
+            TxtEmail.ForeColor = Color.DarkBlue;
+            TxtEmail.Location = new Point(227, 175);
+            TxtEmail.Name = "TxtEmail";
+            TxtEmail.Size = new Size(408, 27);
+            TxtEmail.TabIndex = 7;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 450);
+            Controls.Add(TxtEmail);
+            Controls.Add(label3);
             Controls.Add(DgvContactos);
             Controls.Add(Agregar);
             Controls.Add(TxtTelefono);
@@ -150,6 +183,9 @@
         private Label label2;
         private DataGridView DgvContactos;
         private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn Teléfono;
+        private Button label3;
+        private TextBox TxtEmail;
     }
 }

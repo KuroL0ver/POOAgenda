@@ -4,7 +4,7 @@ namespace POOAgenda
     public partial class Form1 : Form
     {
         //Instancia y Campo de Agenda :3
-        private Agenda  _agenda;
+        private Agenda _agenda;
         public Form1()
         {
             InitializeComponent();
@@ -12,14 +12,14 @@ namespace POOAgenda
             DgvContactos.AutoGenerateColumns = false;
         }
 
-      
+
         //Método de void
         private void label1_Click(object sender, EventArgs e)
         {
             MessageBox.Show(TxtNombre.Text + "-" + TxtTelefono.Text);
         }
 
-    
+
 
 
 
@@ -42,10 +42,11 @@ namespace POOAgenda
             //Es para que busque el nombre y teléfono
             string nombre = TxtNombre.Text;
             string telefono = TxtTelefono.Text;
+            string email = TxtEmail.Text;
 
             //Campo
             //Contacto nuevoContacto = new Contacto(nombre,telefono);
-            ContactoConEmail nuevoContactoConEmail = new ContactoConEmail(nombre,telefono);
+            ContactoConEmail nuevoContactoConEmail = new ContactoConEmail(nombre, telefono, email);
 
 
             //Es para agregar los contactos y es encapsulamiento
@@ -53,10 +54,20 @@ namespace POOAgenda
             _agenda.Agregar(nuevoContactoConEmail);
 
             //Arreglo
-            Contacto[] contactos = _agenda.ObtenerContactos(); 
+            Contacto[] contactos = _agenda.ObtenerContactos();
 
 
             DgvContactos.DataSource = contactos;
+        }
+
+        private void DgvContactos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
