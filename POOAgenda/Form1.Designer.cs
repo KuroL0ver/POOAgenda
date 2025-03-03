@@ -37,8 +37,8 @@
             Nombre = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
             Teléfono = new DataGridViewTextBoxColumn();
-            label3 = new Button();
             TxtEmail = new TextBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)DgvContactos).BeginInit();
             SuspendLayout();
             // 
@@ -134,16 +134,6 @@
             Teléfono.Name = "Teléfono";
             Teléfono.Width = 125;
             // 
-            // label3
-            // 
-            label3.Location = new Point(83, 175);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 29);
-            label3.TabIndex = 6;
-            label3.Text = "Email";
-            label3.UseVisualStyleBackColor = true;
-            label3.Click += button1_Click;
-            // 
             // TxtEmail
             // 
             TxtEmail.BackColor = Color.HotPink;
@@ -153,13 +143,24 @@
             TxtEmail.Size = new Size(408, 27);
             TxtEmail.TabIndex = 7;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(0, 192, 192);
+            label3.ForeColor = Color.MidnightBlue;
+            label3.Location = new Point(95, 184);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 20);
+            label3.TabIndex = 8;
+            label3.Text = "Email";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 450);
-            Controls.Add(TxtEmail);
             Controls.Add(label3);
+            Controls.Add(TxtEmail);
             Controls.Add(DgvContactos);
             Controls.Add(Agregar);
             Controls.Add(TxtTelefono);
@@ -185,7 +186,7 @@
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn Teléfono;
-        private Button label3;
         private TextBox TxtEmail;
+        private Label label3;
     }
 }
